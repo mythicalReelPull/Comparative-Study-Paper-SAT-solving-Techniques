@@ -11,7 +11,7 @@ This repository contains the source code, datasets, and experimental pipeline fo
 - `tester.py`, `tester_DP.py`, `tester_DPLL.py` – Experimental runners for each solver.
 - `chart_maker.py`, `chart_maker_cdcl.py`, `chart_maker_dpll.py` – Scripts to generate performance charts.
 - `generator_clause_sets.py` – Generator for Pigeonhole Principle CNF files.
-- `main.py` – Entry point for custom testing or debugging.
+- `main.py` – TExperimental runner for PHP based on data present in `test_cases` folder.
 
 ## 📦 Requirements
 
@@ -24,10 +24,10 @@ pip install matplotlib pandas
 1. **Resolution Experiments (e.g., Pigeonhole PHP(n,n-1))**
 
 ```bash
-python main.py pigeonhole_3_4.cnf
+python main.py 
 ```
 
-This uses `resolution_algorithm.py` and runs a test on small instances (e.g., `PHP(3,4)`). Larger instances like `PHP(7,8)` are infeasible due to exponential growth.
+This uses `resolution_algorithm.py` and runs a test on small instances (e.g., `PHP(3,4)`). Larger instances like `PHP(7,8)` are infeasible due to exponential growth but it will still run it until it reaches the time limit. Make sure files exist in folder `PigeonHole_Problem/test_cases`
 
 2. **DP Solver Experiments**
 
@@ -48,10 +48,10 @@ Works on SATLIB `uf20`, `uf100`. Output includes runtime, memory, and SAT/UNSAT 
 4. **CDCL Experiments**
 
 ```bash
-python main.py --cdcl --path test_files/uf50
+python tester.py
 ```
 
-Includes VSIDS heuristic, clause learning, and Luby restarts. Performance graphs plotted using `chart_maker_cdcl.py`.
+Includes VSIDS heuristic, clause learning, and Luby restarts. Performance graphs plotted using `chart_maker_cdcl.py` after firstly having a CSV of data in the correct format.
 
 ## 📊 Visualizing Results
 
@@ -60,10 +60,11 @@ Run appropriate chart scripts:
 ```bash
 python chart_maker_dpll.py
 python chart_maker_cdcl.py
+python chart_maker.py \\for DP
 ```
 
 Outputs: runtime comparisons, memory plots, heuristic analysis.
 
 ## 📄 Paper and Appendix
 
-The LaTeX paper summarizing the work is included in `Sat Solver Study`. Refer to Appendix A for GitHub link and citations.
+The LaTeX paper summarizing the work is included in `Comparative-Study-Paper-SAT-solving-Techniques`.
