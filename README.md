@@ -14,6 +14,25 @@ This repository contains the source code, datasets, and experimental pipeline fo
 - `main.py` – TExperimental runner for PHP based on data present in `test_cases` folder.
 
 ## 📦 Requirements
+All the test files were downloaded from: https://www.cs.ubc.ca/~hoos/SATLIB/benchm.html
+Files used from section "Uniform Random-3-SAT": 
+uf20-91: 20 variables, 91 clauses - 1000 instances, all satisfiable
+uf50-218 / uuf50-218: 50 variables, 218 clauses - 1000 instances, all sat/unsat
+uf75-325 / uuf75-325: 75 variables, 325 clauses - 100 instances, all sat/unsat
+uf100-430 / uuf100-430: 100 variables, 430 clauses - 1000 instances, all sat/unsat
+uf125-538 / uuf125-538: 125 variables, 538 clauses - 100 instances, all sat/unsat
+uf150-645 / uuf150-645: 150 variables, 645 clauses - 100 instances, all sat/unsat
+uf175-753 / uuf175-753: 175 variables, 753 clauses - 100 instances, all sat/unsat
+uf200-860 / uuf200-860: 200 variables, 860 clauses - 100 instances, all sat/unsat
+uf225-960 / uuf225-960: 225 variables, 960 clauses - 100 instances, all sat/unsat
+uf250-1065 / uuf250-1065: 250 variables, 1065 clauses - 100 instances, all sat/unsat
+*uf- all satsifiable instances / *uuf- all unsatisfiable instances
+
+Files used from section "'Flat' Graph Colouring":
+flat30-60: 30 vertices, 60 edges - 100 instances, all satisfiable
+
+One type of file (for example "uf20") need to be present(copy-pasted) in the folder "test_cases" 
+of each of the methods used to solve the problem and test.
 
 ```bash
 pip install matplotlib pandas
